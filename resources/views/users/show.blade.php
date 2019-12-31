@@ -11,3 +11,4 @@
 </ul>
 
 @include('movies.movies', ['movies' => $movies])
+@endsection

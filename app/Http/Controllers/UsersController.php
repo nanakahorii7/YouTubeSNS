@@ -20,7 +20,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $movies = $user->movies()->orderBy('id','desc')->pagenate(9);
+        $movies = $user->movies()->orderBy('id','desc')->paginate(9);
         
         $data=[
             'user' => $user,
