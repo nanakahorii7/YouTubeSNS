@@ -7,6 +7,27 @@
         @php
     
             $movie=$user->movies->last();
+            
+            if($movie) {
+                
+                $key_name = config('app.key_name');
+                $get_api_url = "https://www.googleapis.com/youtube/v3/videos?id=$movie->url&key=AIzaSyBAIGXV5s65NkISO9W1k4bz6dJNkzbFFkk&part=snippet";
+                $json = file_get_contents($get_api_url);
+                if($json){
+                    $getData = json_decode( $json , true);
+                    if($getData['pageInfo']['totalResults']==0){
+                        $video_title="※動画が未登録です";
+                    }else{
+                        $video_title=$getData['items']['0']['snippet']['title'];
+                    }
+                }else{
+                    $video_title="※一時的な情報制限中です";
+                }
+            
+            
+            
+            }
+            
         
         @endphp
     
@@ -35,10 +56,17 @@
                     <p>
                         @if(isset($movie->comment))
                                {{ $movie->comment }}
+                        @else
+                               {{ $video_title }}
                         @endif
+                        
                     </p>
                     
-                    @include('follow.follow_button',['user'=>$user])
+                    @if(Auth::id() == $movie->user_id)
+                        {!! Form::open(['route' => ['movies.destroy', $movie->id], 'method' => 'delete']) !!}
+                            {!! Form::submit('この動画を削除する？', ['class' => 'button btn btn-danger']) !!}
+                        {!! Form::close() !!}
+                    @endif
 
                 </div>
                 
