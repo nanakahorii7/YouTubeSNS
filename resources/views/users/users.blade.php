@@ -50,6 +50,9 @@
                             <iframe width="290" height="163.125" src="{{ 'https://www.youtube.com/embed/'.$movie->url }}?controls=1&loop=1&playlist={{ $movie->url }}" frameborder="0"></iframe>
                         @else
                             <iframe width="290" height="163.125" src="https://www.youtube.com/embed/" frameborder="0"></iframe>
+                            @php
+                                $video_title="※動画が未登録です";
+                            @endphp
                         @endif
                     </div>
                     
@@ -62,11 +65,7 @@
                         
                     </p>
                     
-                    @if(Auth::id() == $movie->user_id)
-                        {!! Form::open(['route' => ['movies.destroy', $movie->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('この動画を削除する？', ['class' => 'button btn btn-danger']) !!}
-                        {!! Form::close() !!}
-                    @endif
+                        @include('follow.follow_button',['user'=>$user])
 
                 </div>
                 

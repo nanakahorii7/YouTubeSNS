@@ -39,7 +39,7 @@
                     @foreach ($movies as $key => $movie)
                     <p>動画ID : {{ $movie -> id }} URL : {{ $movie -> url}} コメント：{{ $movie ->comment }} </p>
                     
-                    {!! Form::open(['route' => ['movies.destroy', $movie->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['rest.destroy', $movie->id], 'method' => 'delete']) !!}
                         {!! Form::submit('この動画を削除する？', ['class' => 'button btn btn-danger']) !!}
                     {!! Form::close() !!}
 

@@ -2,10 +2,12 @@
 
 @section('content')
 
-    <div class="center jumbotron bg-warning">
+    <div class="center-block">
 
-        <div class="text-center text-white">
-            <h1>YouTubeまとめ × SNS</h1>
+        <div class="text-black form-inline center-block　text-center" style = "font-family: cursive;"
+        </style>>
+            <img src="img/youtube.jpg">
+            <h1>×　　　SNS</h1>
         </div>
 
     </div>
