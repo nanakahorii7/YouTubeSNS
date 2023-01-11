@@ -14,6 +14,8 @@
     <h1 class="mt-5">GIt変更の確認</h1>
     <h1 class="mt-5">GIt変更の確認2</h1>
     <h1 class="mt-5">GIt変更の確3</h1>
+    <h1 class="mt-5">GIt変更の43</h1>
+
 
 
     {!! Form::open(['route'=>'movies.store']) !!}
