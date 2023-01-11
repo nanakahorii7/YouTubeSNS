@@ -12,8 +12,10 @@
 
 
     <h1 class="mt-5">GIt変更の確認</h1>
-    
-        {!! Form::open(['route'=>'movies.store']) !!}
+    <h1 class="mt-5">GIt変更の確認2</h1>
+
+
+    {!! Form::open(['route'=>'movies.store']) !!}
             <div class="form-group mt-5">
 
                 {!! Form::label('url','新規登録YouTube動画 "ID" を入力する',['class'=>'text-success']) !!}
