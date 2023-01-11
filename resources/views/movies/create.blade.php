@@ -7,10 +7,11 @@
         {{ Auth::user()->name }}
         
     </div>
-
-    <h1 class="mt-5">GIt変更の確認</h1>
     
     <h2 class="mt-5">動画を登録する</h2>
+
+
+    <h1 class="mt-5">GIt変更の確認</h1>
     
         {!! Form::open(['route'=>'movies.store']) !!}
             <div class="form-group mt-5">
